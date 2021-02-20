@@ -3,7 +3,7 @@
 """
 @File        : IVT-Train-Tool
 
-@Contact     : smile.qiangqian@Gmail.com
+@Contact     : xiaofei.smile365@Gmail.com
 @Author      : 苏晓飞
 @Call        ：8610-2484/8690-0070
 @IDE         : PyCharm
