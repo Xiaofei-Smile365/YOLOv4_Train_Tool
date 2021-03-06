@@ -689,12 +689,15 @@ class MainWindow(QMainWindow):
         classes_file = open("./Train/scripts/classes.py", 'w')
         classes_name = "classes = "
         for classes_num in range(0, len(classes_list)):
-            if classes_num == 0:
-                classes_name = classes_name + "[\"%s\", " % classes_list[classes_num]
-            elif (len(classes_list) - 1) > classes_num > 0:
-                classes_name = classes_name + "\"%s\", " % classes_list[classes_num]
-            elif classes_num == (len(classes_list) - 1):
-                classes_name = classes_name + "\"%s\"]" % classes_list[classes_num]
+            if len(classes_list) == 1:
+                classes_name = classes_name + "[\"%s\"]" % classes_list[classes_num]
+            else:
+                if classes_num == 0:
+                    classes_name = classes_name + "[\"%s\", " % classes_list[classes_num]
+                elif (len(classes_list) - 1) > classes_num > 0:
+                    classes_name = classes_name + "\"%s\", " % classes_list[classes_num]
+                elif classes_num == (len(classes_list) - 1):
+                    classes_name = classes_name + "\"%s\"]" % classes_list[classes_num]
         classes_file.write(classes_name)
         classes_file.close()
 
