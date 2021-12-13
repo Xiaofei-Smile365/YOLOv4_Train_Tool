@@ -40,7 +40,6 @@ import xml.etree.ElementTree as ET
 import pickle
 from os import listdir, getcwd
 from os.path import join
-from Train.scripts import classes as class_names
 import signal
 
 
@@ -705,7 +704,7 @@ class MainWindow(QMainWindow):
         if reply == QtWidgets.QMessageBox.Yes:
             print("The Classes Information is Yes in %s" % self.real_time)
             print("The Classes.py is OK in %s" % self.real_time)
-            self.coversition()
+            self.coversition(classes_list)
         elif reply == QtWidgets.QMessageBox.No:
             print("The Classes Information is No in %s" % self.real_time)
             QMessageBox.about(self, "请联系平台开发者", "Developer: 苏晓飞\nTelephone: 8610-2484")
@@ -748,7 +747,7 @@ class MainWindow(QMainWindow):
 
         sets = [('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
 
-        classes = class_names.classes
+        classes = classes_list
 
         def convert(size, box):
             dw = 1. / (size[0])
